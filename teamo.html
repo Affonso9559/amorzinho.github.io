@@ -22,9 +22,19 @@
         </div>
     
         <div class="audio-container">
-            <audio id="backgroundAudio" src="Sunflower.mp3" controls volume="0.02"></audio>
+            <audio id="backgroundAudio" src="Sunflower.mp3" controls></audio>
         </div>
     </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('backgroundAudio');
+            audio.volume = 0.02;
+
+            var volumeControl = document.querySelector('audio').nextElementSibling.querySelector('input[type="range"]');
+            volumeControl.value = 0.02;
+        });
+    </script>
 
 </body>
 </html>
