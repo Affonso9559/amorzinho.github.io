@@ -1,0 +1,182 @@
+*, *::before, *::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+     min-height: 100vh;
+        width: 100%;
+        overflow: hidden;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        background-image: url(girasolll.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;
+  }
+  
+  .embrulho{
+      position: relative;
+      width: 25rem;
+      height: 12rem;
+      margin-top: 1rem;
+      margin-bottom: 20px;
+  }
+  
+  .env {
+      width: 100%;
+      height: 100%;
+      inset: 0;
+      position: absolute;
+      box-shadow: 10px 35px 25px #c7935378;
+  }
+  
+  .env::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 2;
+      background: linear-gradient(-120deg, #ffeb96, #fdd533);
+      clip-path: polygon(0% 0%, 50% 70%, 100% 0%);
+      transform-origin: top;
+      animation: openenv 2s linear forwards 2s;
+  }
+  
+  .env::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: #FF0000;
+      border-radius: 1rem;
+  }
+  
+  .front {
+      position: absolute;
+      inset: 0;
+      border-right: 12.5rem solid #ffeb96;
+      border-top: 7rem solid transparent;
+      border-bottom: 7rem solid transparent;
+      border-radius: 0 1rem 1rem 0;
+  }
+  
+  .front::before {
+      content: '';
+      position: absolute;
+      border-left: 12.5rem solid #ffeb96;
+      border-bottom: 7rem solid transparent;
+      border-top: 7rem solid transparent;
+      top: -7rem;
+  }
+  
+  .front::after {
+      content: '';
+      position: absolute;
+      border-bottom: 7rem solid #ffeb96;
+      border-right: 12.5rem solid transparent;
+      border-left: 12.5rem solid transparent;
+      border-radius: 0 0 1rem 1rem;
+  }
+  
+  img {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 6rem;
+      z-index: 5;
+      transform-origin: top;
+      transform: translate(-50%, -20%);
+      animation: heart 1s forwards 1s;
+  }
+  
+  .carta {
+      background: #eff;
+      height: 95%;
+      width: 90%;
+      margin: .5rem auto;
+      font-size: 1.5rem;
+      color: #ff0000;
+      font-family: 'Amatic SC', cursive;
+      text-align: center;
+      padding-top: 2rem;
+      animation: carta 1s forwards 4s;
+  }
+  
+  .carta .loirinha {
+      color: #fdd533;
+      font-weight: normal;
+  }
+  
+  @keyframes openenv {
+      100% {
+          transform: rotateX(180deg) translateY(-.3rem);
+          z-index: -1;
+          background: linear-gradient(45deg, #fdd533, #fffacd);
+      }
+  }
+  
+  @keyframes carta {
+      100% {
+          transform: translateY(-4.5rem);
+      }
+  }
+  
+  @keyframes heart {
+      100% {
+          transform: translate(-50%, -30%) scaleX(0);
+      }
+  }
+  
+  .nao-sele {
+    user-select: none;
+    -webkit-user-drag: none; 
+    -webkit-touch-callout: none; 
+    -moz-user-select: none; 
+    -ms-user-select: none; 
+    -khtml-user-drag: none;
+    -webkit-user-drag: none;
+    -webkit-touch-callout: none;
+}
+
+.audio-container {
+    position: absolute;
+    bottom: -150px; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.embrulho-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+/* Estilizando os controles */
+audio::-webkit-media-controls-panel {
+    background-color: #ffffff; /* Define a cor de fundo */
+    border-radius: 10px; /* Arredonda as bordas */
+    padding: 10px; /* Adiciona um pouco de espaço interno */
+}
+
+/* Estilizando os botões */
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button {
+    background-color: #fdd533; /* Define a cor de fundo dos botões */
+    border-radius: 50%; /* Deixa os botões redondos */
+    width: 30px;
+    height: 30px;
+    cursor: pointer; /* Adiciona um cursor ao passar o mouse */
+}
+
+/* Estilizando a barra de progresso */
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #000; /* Define a cor do texto */
+    font-size: 14px; /* Define o tamanho da fonte */
+}
+
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button {
+    display: none; /* Esconde os botões de avançar e retroceder */
+}
