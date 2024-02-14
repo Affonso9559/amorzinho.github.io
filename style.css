@@ -154,29 +154,29 @@
 
 /* Estilizando os controles */
 audio::-webkit-media-controls-panel {
-    background-color: #ffffff; /* Define a cor de fundo */
-    border-radius: 10px; /* Arredonda as bordas */
-    padding: 10px; /* Adiciona um pouco de espaço interno */
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 10px; 
 }
 
 /* Estilizando os botões */
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-pause-button {
-    background-color: #fdd533; /* Define a cor de fundo dos botões */
-    border-radius: 50%; /* Deixa os botões redondos */
+    background-color: #fdd533; 
+    border-radius: 50%;
     width: 30px;
     height: 30px;
-    cursor: pointer; /* Adiciona um cursor ao passar o mouse */
+    cursor: pointer; 
 }
 
-/* Estilizando a barra de progresso */
+
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-    color: #000; /* Define a cor do texto */
-    font-size: 14px; /* Define o tamanho da fonte */
+    color: #000; 
+    font-size: 14px; 
 }
 
 audio::-webkit-media-controls-seek-back-button,
 audio::-webkit-media-controls-seek-forward-button {
-    display: none; /* Esconde os botões de avançar e retroceder */
+    display: none; 
 }
