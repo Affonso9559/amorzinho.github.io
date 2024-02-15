@@ -3,7 +3,49 @@
     margin: 0;
     padding: 0;
   }
-  
+  nav {
+    background-color: #cccccc;
+    opacity: 0.5;
+    color: #ffd700;
+    padding: 10px 0;
+    text-align: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000; /* Ensure it appears on top of other content */
+}
+
+nav a {
+    color: #000000;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav img {
+    height: auto;
+    vertical-align: middle;
+}
+
+nav a:hover {
+    color: #f6f6f6;
+}
+
+
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+nav a.sem_::after {
+    display: none;
+}
+
+
   body {
      min-height: 100vh;
         width: 100%;
@@ -154,29 +196,29 @@
 
 /* Estilizando os controles */
 audio::-webkit-media-controls-panel {
-    background-color: #ffffff; 
-    border-radius: 10px; 
-    padding: 10px; 
+    background-color: #ffffff; /* Define a cor de fundo */
+    border-radius: 10px; /* Arredonda as bordas */
+    padding: 10px; /* Adiciona um pouco de espaço interno */
 }
 
 /* Estilizando os botões */
 audio::-webkit-media-controls-play-button,
 audio::-webkit-media-controls-pause-button {
-    background-color: #fdd533; 
-    border-radius: 50%;
+    background-color: #fdd533; /* Define a cor de fundo dos botões */
+    border-radius: 50%; /* Deixa os botões redondos */
     width: 30px;
     height: 30px;
-    cursor: pointer; 
+    cursor: pointer; /* Adiciona um cursor ao passar o mouse */
 }
 
-
+/* Estilizando a barra de progresso */
 audio::-webkit-media-controls-current-time-display,
 audio::-webkit-media-controls-time-remaining-display {
-    color: #000; 
-    font-size: 14px; 
+    color: #000; /* Define a cor do texto */
+    font-size: 14px; /* Define o tamanho da fonte */
 }
 
 audio::-webkit-media-controls-seek-back-button,
 audio::-webkit-media-controls-seek-forward-button {
-    display: none; 
+    display: none; /* Esconde os botões de avançar e retroceder */
 }
