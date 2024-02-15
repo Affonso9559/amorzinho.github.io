@@ -1,11 +1,15 @@
 <!DOCTYPE html>
 <html lang="pt">
 <head>
-<title>Te amo &#60;3</title>
-<link rel="stylesheet" href="style.css" />
+    <title>Te amo &#60;3</title>
+    <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-
+    <nav>
+        <a href="teamo.html">Home</a>
+        <a href="muitomuito.html">Declaraçãozinha</a>
+    </nav>
+    
     <div class="embrulho-container">
         <div class="embrulho">
             <div class="env"></div>
@@ -29,13 +33,57 @@
     <script>
         window.addEventListener('load', function() {
             var audio = document.getElementById('backgroundAudio');
-            audio.volume = 0.02;
+            audio.volume = 0.02; // Definindo o volume inicial como 0.02
+            var playTime = getCookie('playTime');
+            var params = new URLSearchParams(window.location.search);
+            var playTimeFromURL = params.get('playTime');
 
-            var volumeControl = document.querySelector('audio').nextElementSibling.querySelector('input[type="range"]');
-            volumeControl.value = 0.02;
+            // Verifica se há um tempo de reprodução na URL
+            if (playTimeFromURL !== null) {
+                // Se houver, usa o tempo da URL
+                audio.currentTime = parseFloat(playTimeFromURL);
+                audio.play();
+            } else if (playTime !== "") {
+                // Se não houver tempo na URL, mas houver no cookie, usa o tempo do cookie
+                audio.currentTime = parseFloat(playTime);
+                audio.play();
+            }
+
+            // Redireciona para a página 2 (muitomuito.html) com o tempo de reprodução atual como parâmetro de consulta na URL
+            document.querySelector('a[href="muitomuito.html"]').addEventListener('click', function(event) {
+                event.preventDefault();
+                window.location.href = 'muitomuito.html?playTime=' + audio.currentTime;
+            });
         });
+
+        window.addEventListener('beforeunload', function() {
+            var audio = document.getElementById('backgroundAudio');
+            setCookie('playTime', audio.currentTime, 1); // Armazena o tempo de reprodução em um cookie por 1 dia
+        });
+
+        function setCookie(name, value, days) {
+            var expires = "";
+            if (days) {
+                var date = new Date();
+                date.setTime(date.getTime() + (days * 24 * 60 * 60 * 1000));
+                expires = "; expires=" + date.toUTCString();
+            }
+            document.cookie = name + "=" + (value || "") + expires + "; path=/";
+        }
+
+        function getCookie(name) {
+            var nameEQ = name + "=";
+            var ca = document.cookie.split(';');
+            for (var i = 0; i < ca.length; i++) {
+                var c = ca[i];
+                while (c.charAt(0) === ' ') c = c.substring(1, c.length);
+                if (c.indexOf(nameEQ) === 0) return c.substring(nameEQ.length, c.length);
+            }
+            return "";
+        }
     </script>
 
 </body>
 </html>
+
 
