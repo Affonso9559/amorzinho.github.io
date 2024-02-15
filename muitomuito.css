@@ -1,0 +1,140 @@
+body, p, ul {
+    margin: 0;
+    padding: 0;
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(universo.jpg);
+    
+}
+
+.amorzinho_Section {
+    max-width: 800px;
+    margin: 50px auto;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    border-radius: 15px;
+}
+
+h1 {
+    color: #333;
+    font-size: 24px; 
+    font-weight: bold; 
+    text-align: center;
+    font-family: 'Amatic SC', cursive;
+}
+
+h6 {
+    color: #555;
+    text-align: center;
+    font-weight: normal; 
+    margin-top: 10px; 
+    font-family: 'Amatic SC', cursive;
+}
+
+p {
+    color: #777;
+    line-height: 1.6;
+    text-align: justify;
+    text-indent: 20px;
+}
+
+.amorzinho{
+    width: 300px;
+    height: auto; 
+    border-radius: 10px 10px 0 0;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-align:center;
+}
+.audio-container {
+    position: relative;
+    bottom: 0px; 
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+}
+
+.embrulho-container {
+    position: relative;
+    margin-bottom: 20px;
+}
+
+
+
+audio::-webkit-media-controls-panel {
+    background-color: #ffffff; 
+    border-radius: 10px; 
+    padding: 10px; 
+}
+
+
+audio::-webkit-media-controls-play-button,
+audio::-webkit-media-controls-pause-button {
+    background-color: #fdd533; 
+    border-radius: 50%; 
+    width: 30px;
+    height: 30px;
+    cursor: pointer; 
+}
+
+
+audio::-webkit-media-controls-current-time-display,
+audio::-webkit-media-controls-time-remaining-display {
+    color: #000; 
+    font-size: 14px; 
+}
+
+audio::-webkit-media-controls-seek-back-button,
+audio::-webkit-media-controls-seek-forward-button {
+    display: none; 
+}
+
+nav {
+    background-color: #cccccc;
+    opacity: 0.5;
+    color: #ffd700;
+    padding: 10px 0;
+    text-align: center; 
+}
+
+nav a {
+    position: relative;
+    color: #000000;
+    text-decoration: none;
+    padding: 15px 25px;
+    display: inline-block;
+    font-size: 18px;
+    font-weight: bold;
+    transition: color 0.3s;
+}
+
+nav img {
+    height: auto;
+    vertical-align: middle;
+}
+
+nav a:hover {
+    color: #f6f6f6;
+}
+
+
+
+nav a:hover::after {
+    transform: scaleX(1);
+}
+
+nav a.sem_::after {
+    display: none;
+}

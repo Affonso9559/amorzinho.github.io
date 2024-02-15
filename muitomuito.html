@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="muitomuito.css">
+    <title>muitooooooo</title>
+</head>
+<body>
+
+    <nav>
+        <a href="teamo.html">Home</a>
+        <a href="muitomuito.html">Declaraçãozinha</a>
+    </nav>
+    
+    <section class="amorzinho_Section">
+        <h1>Feliz Dia dos Namorados &#40;no hemisfério norte&#41; </h1>
+        <h6>kkkkkkkk</h6>
+
+        <p>Amorzinho, eu sei que isso não é nada impressionante de se fazer, porém não queria deixar passar completamente despercebido esse dia dos namorados aqui no lado de cima do planeta, então resolvi fazer essa miniatura de sitezinho para poder me declarar mais uma vez para a pessoa que eu mais amo nesse mundão.</p>
+
+        <p>Então neném, te disse isso muitas vezes no passado, porém acho sempre necessário relembrar: Você é a pessoa mais especial que eu tive o prazer de conhecer, não considero a mulher dos meus sonhos pois eu nunca ousei ter sonhado tão alto assim (ok, talvez não tão alto assim... 1.5m kkkkkkkk) brincadeira.</p>
+
+        <p>Desde quando passamos nossas primeiras semanas juntos eu já conseguia sentir o quão especial e ÚNICA você é. Uma mulher que esbanja felicidade, beleza, inteligência e muita mas MUITA coragem. Abaixo coloquei a "montagem" de fotos da gente que eu mais gosto até hoje da melhor viagem da minha vida:</p>
+
+        <img class="amorzinho" src="/hihihi.jpg" alt="">
+        
+        <p> Apesar deste ser o primeiro (ou técnicamente primeira metade) de dia dos namorados que não passamos juntos (mesmo que separados) sinto quase como se estivesse junto com você, especialmente nos momentos em que me recordo de tantos momentos inesquecíveis vivemos juntos e tantos outros que ainda iremos viver!</p>
+
+        <p> Aí, acho que já ta ficando longo demais, né? kkkkkkkkkkkkk apesar de eu ainda ser bem ruinzinho na programação, pode saber que fiz com muito carinho, ta? e até mesmo a música tem um significado, viu?</p> <br>
+        <strong>Te amo muito, muito MUITOOO, loirinha, do tamanho do universo </strong>
+        <p>&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;&#x2764;</p>
+    </section>
+
+    <div class="audio-container">
+        <audio id="backgroundAudio" src="Sunflower.mp3" controls></audio>
+    </div>
+
+    <script>
+        window.addEventListener('load', function() {
+            var audio = document.getElementById('backgroundAudio');
+            audio.volume = 0.02; // Definindo o volume inicial como 0.02
+            var params = new URLSearchParams(window.location.search);
+            var playTime = params.get('playTime');
+            if (playTime !== null) {
+                audio.currentTime = parseFloat(playTime);
+                audio.play();
+            }
+        });
+    </script>
+</body>
+</html>
